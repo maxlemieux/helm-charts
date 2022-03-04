@@ -8,9 +8,9 @@ set:
   licenseKey: test-license-key
   cluster: test-cluster
 tests:
+  # We cannot test behaviour without overwriting this since the version chart often changes
   - it: sets labels according to values
     set:
-      # We cannot test behaviour without overwriting this since the version chart often changes
       labels:
         helm.sh/chart: fixed
     asserts:
@@ -24,7 +24,6 @@ tests:
             helm.sh/chart: fixed
   - it: sets labels with globals giving priority to values
     set:
-      # We cannot test behaviour without overwriting this since the version chart often changes
       labels:
         helm.sh/chart: fixed
         one: overwriting
@@ -43,5 +42,3 @@ tests:
             helm.sh/chart: fixed
             one: overwriting
             two: second
-
-

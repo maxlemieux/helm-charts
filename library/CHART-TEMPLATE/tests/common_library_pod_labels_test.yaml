@@ -8,7 +8,7 @@ set:
   licenseKey: test-license-key
   cluster: test-cluster
 tests:
-  - it: sets pod labels to selector labels is not podLabel is specified
+  - it: sets pod labels to selectorLabels if no podLabel specified
     asserts:
       - equal:
           path: spec.template.metadata.labels
@@ -42,5 +42,3 @@ tests:
             app.kubernetes.io/name: CHART-TEMPLATE
             one: first
             two: second
-
-
